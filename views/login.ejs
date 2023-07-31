@@ -1,0 +1,41 @@
+<%- include('partial/header')%>
+<div class="container w-75 p-3">
+<form class="container w-50 p-3 border border-primary text-primary text-opacity-50" action="/login" method="post">
+    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+    <div class="form-floating">
+      <input type="email" class="form-control" name="username" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    
+    
+    <div class="container text-center my-3">
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-block btn-google" href="/auth/google" role="button">
+                Sign In with
+                <i class="fab fa-google"></i>
+                
+              </a>
+        </div>
+        <div class="col">
+            <a class="btn btn-block btn-facebook" href="/auth/google" role="button">
+                Sign In with
+                <i class="fab fa-facebook"></i>
+              </a>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary w-100 py-2" type="submit">Sign in</button>
+    <a href="/register" class="text-secondary">Register if u are new</a>
+  </form>
+  
+</div>
+
+  <%- include('partial/footer')%>

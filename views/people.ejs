@@ -1,0 +1,35 @@
+<%-include('partial/header')%>
+<nav class="navbar sticky-top bg-body-tertiary bg-secondary">
+    <div class="container-fluid">
+      <a class="navbar-brand text-primary" href="#">Welcome <%=name%> !</a>
+      <div>
+        <button type="button" class="btn btn-outline-primary"><a href="/logout">LogOut</a></button>
+      <button type="button" class="btn btn-outline-primary"><a href="/review">Review</a></button>
+      </div>
+      
+    </div>
+  </nav>
+  <% for(let i=0;i<item.length;i++){ %>
+    <% if(item[i].check==='nd'){%>
+        <form action="/delete" method="post">
+        <div class="d-flex align-items-center">
+    <div class="list-group w-75 my-4 ml-5 text-bg-primary d-flex">
+    <a href=<%=item[i].url%> class="list-group-item p-2 flex-fill list-group-item-action        list-group-item-success"><%=item[i].question%></a>
+    </div>
+     <button  type="submit" class="btn btn-outline-danger ml-1" name="id"  value=<%=item[i]._id%>        style="height: 3rem;"  >Incomplete</button>
+    </div>
+    </form>
+    <% } %>
+    <% if(item[i].check==='d'){ %>
+        <form action="/delete" method="post">
+            <div class="d-flex align-items-center">
+        <div class="list-group w-75 my-4 ml-5 text-bg-primary d-flex">
+        <a href=<%=item[i].url%> class="list-group-item p-2 flex-fill list-group-item-action        list-group-item-success"><%=item[i].question%></a>
+        </div>
+         <button  type="submit" class="btn btn-outline-success ml-1" name="id"  value=<%=item[i]._id%>        style="height: 3rem;"  >Completed</button>
+        </div>
+        </form>
+    <%} %>
+    
+  <% }  %>
+<%-include('partial/footer')%>
